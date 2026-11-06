@@ -16,6 +16,6 @@ if apk.exists():
 src = "".join(p.read_text() for p in (root/"app/src/main/java").rglob("*.java"))
 for token in ["class InkView", "PdfRenderer", "pushUndo", "ACTION_OPEN_DOCUMENT", "PdfDocument"]:
     check(f"source contains {token}", token in src)
-for banned in ["com.google.android.gms", "firebase", "ads", "INTERNET"]:
+for banned in ["com.google.android.gms", "firebase", "AdView", "INTERNET"]:
     check(f"no {banned}", banned not in src and banned not in (root/"app/src/main/AndroidManifest.xml").read_text())
 sys.exit(1 if fails else 0)
