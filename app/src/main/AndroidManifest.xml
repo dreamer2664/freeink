@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="app.freeink">
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <application android:label="FreeInk" android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher" android:theme="@style/Theme.FreeInk"
+        android:allowBackup="true" android:supportsRtl="true">
+        <activity android:name=".ui.MainActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+            <intent-filter><action android:name="android.intent.action.SEND"/><category android:name="android.intent.category.DEFAULT"/><data android:mimeType="image/*"/><data android:mimeType="application/pdf"/></intent-filter>
+        </activity>
+        <activity android:name=".ui.EditorActivity" android:exported="false" android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity android:name=".ui.TextNoteActivity" android:exported="false" android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity android:name=".ui.SettingsActivity" android:exported="false"/>
+        <provider android:name=".util.ShareProvider" android:authorities="app.freeink.files" android:exported="false" android:grantUriPermissions="true"/>
+    </application>
+</manifest>

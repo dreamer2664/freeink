@@ -1,0 +1,7 @@
+// FreeInk — 100% free & open source. Zero third-party runtime dependencies.
+buildscript {
+    ext.agp_version = '8.5.2'
+    repositories { google(); mavenCentral() }
+    dependencies { classpath "com.android.tools.build:gradle:$agp_version" }
+}
+allprojects { repositories { google(); mavenCentral() } }
